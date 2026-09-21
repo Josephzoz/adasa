@@ -1,0 +1,289 @@
+
+:host {
+  display: block;
+  padding-top: 88px;
+}
+
+#first-section{
+   background-image:
+        linear-gradient(#222 1px, transparent 1px),
+        linear-gradient(90deg, #222 1px, transparent 1px);
+
+    background-size: 50px 50px;
+}
+.title{
+  font-size: 30px;
+}
+
+.formImages {
+  width: 25px;
+  height: 25px;
+}
+
+.border-gray {
+  border-color: gray !important;
+}
+
+.border-grey {
+  border-color: grey !important;
+}
+
+.know-more {
+  transition: 0.3s;
+}
+
+.know-more:hover {
+  border-color: #ff6900 !important;
+  color: #ff6900 !important;
+}
+
+.discover-blogs {
+  transition: transform 0.3s;
+}
+.discover-blogs i {
+  transition: transform 0.3s;
+}
+.discover-blogs:hover {
+  transform: translateY(-3px);
+}
+.discover-blogs:hover i {
+  transform: translateX(-5px);
+}
+
+/* .col-3{
+  transition: 0.3s;
+}
+
+.col-3:hover{
+  transform: scale(1.05);
+} */
+
+.btn-all {
+  transition: 0.3s;
+}
+
+.btn-all a i {
+  transition: 0.3s;
+}
+
+.btn-all:hover {
+  transform: translateY(-3px);
+}
+
+.btn-all:hover a i {
+  transform: translateX(-5px);
+}
+
+.badge-color {
+  background: linear-gradient(to left, #ff6c00, #f1ae00);
+}
+
+.badge-color span i {
+  font-size: 10px;
+}
+
+.author-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+article a {
+  transition: 0.3s;
+}
+
+article a h2 {
+  transition: 0.3s;
+}
+article a .move {
+  transition: 0.3s;
+}
+article a .article-img {
+  transition: 0.3s;
+}
+
+article a:hover {
+  border-color: #ff6900 !important;
+}
+
+article a:hover h2 {
+  color: #ff6900 !important;
+}
+article a:hover .move {
+  transform: translateX(5px);
+}
+
+article a:hover .article-img {
+  transform: scale(1.05);
+}
+/* .sora {
+  height: 430px;
+  object-fit: cover;
+} */
+
+/* .category{
+  transition: 0.3s;
+}
+
+
+
+.category:hover{
+  transform: scale(1.02);
+} */
+
+#third-section a {
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+
+#third-section a .icon {
+  transition: 0.3s;
+ 
+}
+
+#third-section a .icon i {
+  transition: 0.3s;
+ 
+}
+
+#third-section a .arrow {
+  display: none;
+  transition: 0.3s;
+ 
+}
+
+/* #third-section a .arrow i{
+ 
+  transition: 0.3s;
+ 
+} */
+
+#third-section a:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(to left,#F79F00,#FF7500);
+}
+
+#third-section a:hover .icon {
+
+  background-color:#FDA633 ;
+  border: none !important;
+ 
+}
+
+#third-section a:hover .icon i {
+  color: white !important;
+ 
+ 
+}
+
+#third-section a:hover .arrow {
+  display: block;
+  background-color: #FDA633 !important;
+ 
+}
+
+
+
+.all-anchor a {
+  transition: 0.3s;
+}
+
+.all-anchor a i {
+  transition: 0.3s;
+}
+
+.all-anchor:hover a {  
+  color: #FF8904 !important;
+}
+
+.all-anchor:hover a i {
+  transform: translateX(-5px);
+}
+
+#fourth-section article {
+  transition: 0.3s;
+}
+
+
+#fourth-section article .picture{
+  transition: 0.3s;
+}
+
+#fourth-section article h3{
+  transition: 0.3s;
+}
+
+
+#fourth-section article .left-arrow{
+  transition: 0.3s;
+}
+
+#fourth-section article .left-arrow i{
+  transition: 0.3s;
+}
+
+#fourth-section article:hover{
+  transform: translateY(-7px) ;
+}
+
+
+#fourth-section article:hover .picture{
+  transform: scale(1.05) ;
+}
+
+#fourth-section article:hover h3{
+  color: #FF6900 !important;
+}
+#fourth-section article:hover .left-arrow{
+  border: none;
+  background-color:#FF6900 ;
+
+
+}
+
+#fourth-section article:hover .left-arrow i{
+color: white;
+
+
+}
+
+.linear-text{
+  background: linear-gradient(to left,#FBB822,#F97B17);
+    -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* .w-60{
+  width: 60%;
+
+} */
+
+/* .w-80{
+  width: 80%;
+
+} */
+
+@media (min-width: 768px) {
+  .box {
+    width: 60% !important;
+  }
+
+  .small-box{
+    width: 80% !important;
+  }
+
+   form input {
+    width: 75% !important;
+  }
+
+  form button {
+    width: 25% !important;
+  }
+   .img-box {
+    border-radius: 0 !important;
+   border-start-start-radius: 32px !important;
+border-end-start-radius: 32px !important;
+  }
+}

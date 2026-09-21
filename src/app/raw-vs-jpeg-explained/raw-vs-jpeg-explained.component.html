@@ -1,0 +1,298 @@
+ @for (blog of blogs; track blog.id) {
+  @if (blog.slug === 'raw-vs-jpeg-explained') {
+    <article class="bg-black">
+      <section class="pb-5">
+        <div class="position-relative pt-5">
+          <img
+            class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" style="z-index: 1;"
+            [src]="blog.image"
+            [alt]="blog.title"
+          />
+
+          <div class="position-absolute top-0 start-0 w-100 h-100 image-gradient"></div>
+
+          <div class="position-relative" style="z-index: 3;">
+            <div class="anchors d-inline-block ms-4 rounded-5 py-2 px-3 mb-4">
+              <a routerLink="/home" routerLinkActive="active"
+                ><i class="fa-solid fa-house text-gray"></i
+              ></a>
+              <i class="fa-solid fa-chevron-left text-gray"></i>
+              <a routerLink="/blog" routerLinkActive="active" class="text-decoration-none text-gray"
+                >المدونة</a
+              >
+              <i class="fa-solid fa-chevron-left text-gray"></i>
+              <span class="text-second">{{ blog.category }}</span>
+            </div>
+            <div class="w-75 mx-auto">
+              <div
+                class="d-flex flex-column flex-sm-row justify-content-start align-items-start align-items-sm-center mb-4"
+              >
+                @for (category of categories; track category.route) {
+                  @if (category.name === blog.category) {
+                    <a
+                      routerLink="/blog/{{category.route}}"
+                      class="text-decoration-none p-2 rounded-5 bg-main text-white me-3"
+                    >
+                      {{ category.name }}
+                    </a>
+                  }
+                }
+               
+                <div>
+                  <span class="text-article me-3"
+                    ><i class="fa-regular fa-calendar text-article"></i
+                    >{{ formatDate(blog.date) }}</span
+                  >
+                  <span class="text-article"
+                    ><i class="fa-regular fa-clock text-article"></i>{{ blog.readTime }}</span
+                  >
+                </div>
+              </div>
+
+              <h1 class="text-white mb-5 pb-5">{{ blog.title }}</h1>
+
+              <div class="d-inline-block rounded-4 bg-dark mb-5">
+                <div class="d-flex align-items-center p-3 gap-3">
+                  <img
+                    class="authorImage border border-1 border-orange"
+                    [src]="blog.author.avatar"
+                    alt="person image"
+                  />
+
+                  <div>
+                    <p class="text-white">{{ blog.author.name }}</p>
+                    <p class="text-gray">{{ blog.author.role }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-black">
+        <div class="container">
+          <div class="row g-3">
+            <div class="col-12 col-lg-9 order-2 order-lg-1">
+              <div class="p-3">
+                <div
+                  class="excerpt rounded-4 py-3 px-4 bg-title border border-1 border-orange mb-5"
+                >
+                  <p class="text-article fs-5 fw-medium fst-italic">"{{ blog.excerpt }}"</p>
+                </div>
+                <div class="titles">
+                  @for (item of getContent(blog.content); track $index) {
+                    @if (item.startsWith('## ')) {
+                      <h2
+                        [id]="getHeadingId(item, blog.content)"
+                        class="text-white mb-4"
+                        style="scroll-margin-top: 120px"
+                      >
+                        <span class="border border-orange rounded-4 me-3 bg-title"
+                          ><i class="fa-solid fa-camera text-second"></i></span
+                        >{{ item.replace('## ', '') }}
+                      </h2>
+                    } @else {
+                      <p class="text-article mb-5">{{ item }}</p>
+                    }
+                  }
+                </div>
+                <div class="rounded-4 bg-first p-4">
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-3 border border-1 border-orange me-3 p-2 bg-title">
+                      <span><i class="fa-solid fa-tags text-second"></i></span>
+                    </div>
+                    <h3 class="text-white">الوسوم</h3>
+                  </div>
+                  <div class="pt-4 d-flex flex-wrap gap-2">
+                    @for (tag of blog.tags; track $index) {
+                      <span
+                        class="tags d-inline-block py-2 px-3 me-3 text-gray rounded-5 border border-1 border-black"
+                        style="background-color: #1a1a1a"
+                        >#{{ tag }}</span
+                      >
+                    }
+                  </div>
+                </div>
+
+                <div class="rounded-4 bg-first p-4 mt-4">
+                  <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-3 border border-1 border-orange me-3 p-2 bg-title">
+                        <span><i class="fa-solid fa-share-nodes text-second"></i></span>
+                      </div>
+                      <h3 class="text-white">شارك المقال</h3>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <button class="one me-2 rounded-3 border border-1 border-dark bg-second p-2">
+                        <i class="fa-brands fa-x-twitter text-article"></i>
+                      </button>
+                      <button class="two me-2 rounded-3 border border-1 border-dark bg-second p-2">
+                        <i class="fa-brands fa-linkedin text-article"></i>
+                      </button>
+                      <button
+                        class="three me-2 rounded-3 border border-1 border-dark bg-second p-2"
+                      >
+                        <i class="fa-brands fa-whatsapp text-article"></i>
+                      </button>
+                      <button class="four me-2 rounded-3 border border-1 border-dark bg-second p-2">
+                        <i class="fa-solid fa-link text-article"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rounded-4 bg-first p-4 mt-4">
+                  <div
+                    class="d-flex flex-column flex-lg-row align-items-center align-items-lg-start gap-3 text-center text-lg-start"
+                  >
+                    <img
+                      class="image-info rounded-4 border border-3 border-orange"
+                      [src]="blog.author.avatar"
+                      alt="person image"
+                    />
+                    <div>
+                      <span class="text-second">كاتب المقال</span>
+                      <h3 class="text-white mt-2 mb-0">{{ blog.author.name }}</h3>
+                      <p class="text-white-50 mb-0">{{ blog.author.role }}</p>
+                      <p class="text-article">
+                        مصور محترف شغوف بمشاركة المعرفة والخبرات في عالم التصوير الفوتوغرافي.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-3 order-1 order-lg-2">
+              <div class="sticky">
+                <div class="rounded-4 bg-first p-4">
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-3 p-2 me-2 bg-title border border-1 border-orange">
+                      <i class="fa-solid fa-list-ul text-second"></i>
+                    </div>
+                    <h3 class="text-white">محتويات المقال</h3>
+                  </div>
+                  <nav>
+                    @for (item of getHeadings(blog.content); track $index) {
+                      <a
+                        class="topic-anchor d-block text-decoration-none text-gray rounded-3"
+                        [routerLink]="[]"
+                        [fragment]="'part' + ($index + 1)"
+                      >
+                        <span
+                          class="inside-anchor d-inline-block px-2 py-1 rounded-2 border-0 bg-third ms-2 me-3 my-2 text-gray"
+                          >{{ $index + 1 }}</span
+                        >
+                        <span class="text-article">{{ item.replace('## ', '') }}</span>
+                      </a>
+                    }
+                  </nav>
+                </div>
+
+                <div class="rounded-4 bg-first p-4 mt-4">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="rounded-4 bg-black p-3 text-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                          <i class="fa-regular fa-clock text-second"></i>
+                          <p class="text-white mb-0 mt-2">{{ blog.readTime }}</p>
+                          <p class="text-gray">وقت القراءة</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                      <div class="rounded-4 bg-black p-3 text-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                          <i class="fa-regular fa-calendar text-second"></i>
+                          <p class="text-white mb-0 mt-2">{{ blog.date }}</p>
+                          <p class="text-gray">تاريخ النشر</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rounded-4 bg-title border border-1 border-orange p-4 mt-4">
+                  <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div class="message-box bg-title rounded-4 p-3">
+                      <i class="fa-solid fa-envelope text-second fs-5"></i>
+                    </div>
+                    <h3 class="text-white">لا تفوّت جديدنا</h3>
+                    <p class="text-gray">اشترك للحصول على أحدث المقالات</p>
+                    <a
+                      class="d-inline-block w-100 text-center text-decoration-none bg-main text-white rounded-4 p-3 fw-bolder"
+                      text-white
+                      routerLink="/blog"
+                      routerLinkActive="active"
+                      >تصفح المزيد</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="text-gray my-5" />
+        </div>
+
+        <!-- <hr class="text-gray my-5"/> -->
+      </section>
+
+      <section class="bg-black">
+        <div class="container">
+          <div
+            class="d-flex flex-column flex-sm-row justify-content-between align-items-start gap-3 mb-4"
+          >
+            <div class="d-flex align-items-start justify-content-center">
+              <span class="d-inline-block p-3 rounded-4 border border-1 border-orange bg-title me-3"
+                ><i class="fa-solid fa-images text-second fs-5"></i
+              ></span>
+              <div>
+                <h2 class="text-white">مقالات قد تعجبك</h2>
+                <p class="text-gray">استكشف المزيد من المحتوى المميز</p>
+              </div>
+            </div>
+            <a
+              class="my-anchor text-second text-decoration-none me-3"
+              routerLink="/blog/allBlogs"
+              routerLinkActive="active"
+              >عرض الكل <i class="fa-solid fa-arrow-left-long ms-2"></i
+            ></a>
+          </div>
+
+          <div class="row pb-5 gy-5">
+            @for (item of getRelatedBlogs(blog); track item.id) {
+              <div class="col-12 col-sm-6 col-lg-4">
+                <div class="last-articles h-100">
+                  <a
+                    class="d-block h-100 rounded-4 bg-first border border-1 border-dark text-decoration-none overflow-hidden"
+                  >
+                    <div class="last-images position-relative">
+                      <img class="w-100 rounded-top-4" [src]="item.image" [alt]="item.title" />
+                      <span
+                        class="position-absolute top-0 start-0 py-1 px-2 m-3 text-white bg-main rounded-5"
+                        >{{ item.category }}</span
+                      >
+                    </div>
+
+                    <div class="p-3">
+                      <h3 class="text-white">{{ item.title }}</h3>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-gray">
+                          <img class="authorImg" [src]="item.author.avatar" alt="author image" />
+                          {{ item.author.name }}
+                        </span>
+                        <span class="text-gray">{{ item.readTime }}</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </section>
+    </article>
+  }
+}

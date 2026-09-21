@@ -1,0 +1,295 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+    --maintext-color:#FAAD20;
+    --mainbg-color:#FF6900;
+}
+
+
+.bg-main{
+    background-color: var(--mainbg-color);
+}
+
+.bg-first{
+  background-color: #111111;
+}
+
+.bg-second{
+  background-color: #141414;
+}
+
+.bg-third{
+  background-color: #161616;
+}
+
+.bg-title{
+  background-color: #24160B;
+}
+
+.border-main{
+  border-color: #5d2e0f;
+}
+
+
+
+
+
+.text-main{
+    color: var(--maintext-color) ;
+}
+
+.text-second{
+    color:var(--mainbg-color)
+}
+
+.text-gray{
+  color: #A1A1A1;
+}
+
+.text-article{
+  color: #D7D6D6;
+}
+
+.text-read{
+  color: #737373;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.border-orange{
+  border-color: var(--mainbg-color) !important;
+}
+
+
+.first-ball,
+.second-ball {
+  display: inline-block;
+  border-radius: 50%;
+  animation-name: wobble;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.first-ball {
+  width: 7px;
+  height: 7px;
+  background-color: #FF6900;
+  animation-duration: 1s;
+}
+
+.second-ball {
+  width: 10px;
+  height: 10px;
+  background-color: #FF6900;
+  animation-duration: 2s;
+}
+
+.w-70{
+  width: 70%;
+}
+
+.start-25{
+  right:-5px
+}
+
+@keyframes wobble {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+}
+
+
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 72px;
+  }
+
+  h2 {
+    font-size: 60px;
+  }
+}
+
+
+/* articles details css */
+:host {
+  display: block;
+  padding-top: 90px;
+}
+
+.authorImage{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+
+
+.image-info{
+  width: 100px;
+  height: 100px;
+}
+
+.sticky {
+  position: sticky;
+  top: 90px;
+}
+
+.authorImg{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.article-gradient {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0.7) 70%,
+    #000 100%
+  ) !important;
+}
+.anchors{
+  background-color: #444240;
+}
+
+.anchors a{
+  transition: 0.3s;
+}
+.anchors a i{
+  transition: 0.3s;
+}
+
+.anchors a:hover{
+  color: white ;
+}
+
+
+.anchors a:hover i{
+  color: white ;
+}
+
+.tags{
+  transition: 0.3s;
+}
+
+.tags:hover{
+  border: 1px solid #FF6900 !important;
+  color: #FF6900 !important;
+}
+
+.one,
+.two,
+.three,
+.four{
+  transition: 0.3s;
+}
+
+.one:hover{
+  background-color: #1DA1F2;
+}
+
+.two:hover{
+  background-color: #0077B5;
+}
+.three:hover{
+  background-color: #25D366;
+}
+.four:hover{
+  background-color: #FF6900;
+}
+
+.topic-anchor{
+  transition: 0.3s;
+}
+
+.inside-anchor{
+  transition: 0.3s;
+}
+
+.topic-anchor:hover{
+  background-color: #1D1510 !important;
+  color: #FF6900 !important;
+
+}
+
+.topic-anchor:hover .inside-anchor{
+  background-color: #341D0E !important;
+  color: #FF6900 !important;
+
+}
+
+.message-box{
+  background-color: #4B2407 !important;
+}
+
+.my-anchor,
+.my-anchor i{
+  transition: 0.3s;
+}
+
+.my-anchor:hover{
+  color: #FF8904 !important;
+}
+
+.my-anchor:hover i{
+  transform: translateX(-5px);
+}
+
+.last-articles a,
+.last-articles h3,
+.last-articles .last-images{
+  transition: 0.3s;
+}
+
+.last-articles a:hover{
+  border-color: #FF6900 !important;
+}
+
+.last-articles a:hover h3{
+  color: #FF6900 !important;
+}
+
+.last-articles a:hover .last-images{
+  transform: scale(1.05);
+}
+
+
+.titles h2{
+  font-size: 30px;
+}
+
+.image-gradient {
+  z-index: 2;
+    background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.2) 100%);
+}
+

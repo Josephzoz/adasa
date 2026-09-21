@@ -1,0 +1,125 @@
+<!-- <p>navbar works!</p> -->
+
+<!-- <nav class="navbar navbar-expand-lg bg-black fixed-top">
+  <div class="container d-flex justify-content-between">
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand d-flex">
+        <div>
+          <img src="./images/logo-GdqARQRt.png" alt="adasa logo" />
+        </div>
+        <div class="ms-2">
+          <span class="d-block fs-4 fw-bold text-white">عدسة</span>
+          <span class="fs-6 fw-light text-main">عالم التصوير الفوتوغرافي</span>
+        </div>
+      </a>
+    </div>
+    
+    <div id="navbarSupportedContent" class="rounded-5 p-1" style="background-color: #161616">
+      <div class="d-flex">
+        <a
+          class="nav-link text-gray px-4 py-2"
+          routerLink="/home"
+          routerLinkActive="bg-main rounded-5 text-white"
+          
+        >
+          الرئيسية
+        </a>
+
+        <a
+          class="nav-link text-gray px-4 py-2"
+          routerLink="/blog"
+          routerLinkActive="bg-main rounded-5 text-white"
+          
+        >
+          المدونة
+        </a>
+
+        <a
+          class="nav-link text-gray px-4 py-2"
+          routerLink="/whoarewe"
+          routerLinkActive="bg-main rounded-5 text-white"
+          
+        >
+          من نحن
+        </a>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-center">
+      <i
+        class="fa-solid fa-magnifying-glass me-3 p-4 d-flex justify-content-center align-items-center fs-6 text-gray"
+      ></i>
+
+      <button class="px-4 py-3 rounded-5 bg-main border-0 text-white">ابدأ القراءة</button>
+    </div>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg bg-black fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" routerLink="/home">
+      <div>
+        <img src="./images/logo-GdqARQRt.png" alt="adasa logo" />
+      </div>
+
+      <div class="ms-2">
+        <span class="d-block fs-4 fw-bold text-white">عدسة</span>
+        <span class="fs-6 fw-light text-main">عالم التصوير الفوتوغرافي</span>
+      </div>
+    </a>
+
+    <button
+      class="navbar-toggler border-0 bg-main rounded-3 p-2"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fa-solid fa-bars text-white fs-4"></i>
+    </button>
+
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+      <div class="mx-auto rounded-5 p-1 mt-3 mt-lg-0" style="background-color: #161616">
+        <div class="d-flex flex-column flex-lg-row">
+          <a
+            class="nav-link text-gray px-4 py-2"
+            routerLink="/home"
+            routerLinkActive="bg-main rounded-5 text-white"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            الرئيسية
+          </a>
+
+          <a
+            class="nav-link text-gray px-4 py-2"
+            routerLink="/blog"
+            routerLinkActive="bg-main rounded-5 text-white"
+          >
+            المدونة
+          </a>
+
+          <a
+            class="nav-link text-gray px-4 py-2"
+            routerLink="/whoarewe"
+            routerLinkActive="bg-main rounded-5 text-white"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            من نحن
+          </a>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+        <i
+          class="fa-solid fa-magnifying-glass me-3 p-3 d-none d-lg-flex justify-content-center align-items-center fs-6 text-gray"
+        ></i>
+
+        <button class="read-btn px-4 py-3 rounded-5 bg-main border-0 text-white w-100">
+          ابدأ القراءة
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

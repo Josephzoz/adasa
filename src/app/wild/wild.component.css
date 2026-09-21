@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  padding-top: 88px;
+}
+
+.home-btn {
+
+  transition: 0.3s ;
+}
+.home-btn:hover {
+  /* background-color: #ffffff !important;
+  border-color: #ffffff;
+  color: #000000 !important; */
+  transform: translateY(-5px);
+}
+/* .home-btn:hover i {
+  color: #000000 !important;
+} */
+.blog-btn {
+  
+  transition: 0.3s ease;
+}
+.blog-btn:hover {
+  background-color: #24160B !important;
+  border-color:#FF6900 !important;
+  color: #FF6900 !important;
+}
+.blog-btn:hover i {
+  color: #FF6900 !important;
+}

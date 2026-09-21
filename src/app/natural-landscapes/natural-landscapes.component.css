@@ -1,0 +1,52 @@
+.author-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+article {
+  transition: 0.3s;
+}
+
+
+article .picture{
+  transition: 0.3s;
+}
+
+article h3{
+  transition: 0.3s;
+}
+
+
+article .left-arrow{
+  transition: 0.3s;
+}
+
+article .left-arrow i{
+  transition: 0.3s;
+}
+
+article:hover{
+  transform: translateY(-7px) ;
+}
+
+
+article:hover .picture{
+  transform: scale(1.05) ;
+}
+
+article:hover h3{
+  color: #FF6900 !important;
+}
+article:hover .left-arrow{
+  border: none;
+  background-color:#FF6900 ;
+
+
+}
+
+article:hover .left-arrow i{
+color: white;
+
+
+}

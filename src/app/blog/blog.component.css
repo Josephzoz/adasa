@@ -1,0 +1,31 @@
+:host{
+    display: block;
+    padding-top: 88px;
+}
+
+#first-section{
+
+    background-image:
+        linear-gradient(#222 1px, transparent 1px),
+        linear-gradient(90deg, #222 1px, transparent 1px);
+
+    background-size: 50px 50px;
+}
+
+.categories-btn:hover{
+    border-color: #5d2e0f !important;
+}
+
+.blog-avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.icon{
+    font-size: 8px;
+}
+
+.color{
+    color: #FBA720;
+}

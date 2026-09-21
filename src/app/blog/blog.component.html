@@ -1,0 +1,95 @@
+
+
+<section id="first-section" class="bg-black py-5">
+  <div class="container">
+    <div class="text-center">
+      
+      <div
+          class="d-inline-block rounded-5 mx-auto py-2 px-3 border border-1 border-orange bg-title"
+        >
+          <span class="first-ball me-2"></span>
+          <span class="me-2 text-second"><i class="fa-solid fa-newspaper"></i></span>
+          <span class="text-second">مدونتنا</span>
+        </div>
+      <h1 class="text-white mt-4 mt-md-5 fs-2 fs-md-1">
+        استكشف <span class="color">مقالاتنا</span>
+      </h1>
+      <p class="text-gray mt-3 mb-0">اكتشف الدروس والرؤى وأفضل الممارسات للتطوير الحديث</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="py-5 bg-black">
+  <div class="container">
+    <div
+      class="d-flex flex-column flex-md-row justify-content-between border-bottom border-dark pb-4"
+    >
+      <div>
+        <input type="text" />
+      </div>
+
+      <div class="d-flex flex-wrap">
+        <a
+          class="categories-btn border border-1 border-dark rounded-4 me-2 py-2 px-3 text-gray text-decoration-none my-2"
+          (click)="selectCategory('كل المقالات')"
+          routerLink="allBlogs"
+          routerLinkActive="bg-main text-white"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          جميع المقالات
+        </a>
+        @for (category of categories; track $index) {
+          <a
+            class="categories-btn border border-1 border-dark rounded-4 me-2 py-2 px-3 text-gray text-decoration-none my-2"
+            (click)="selectCategory(category.name)"
+            [routerLink]="category.route"
+            routerLinkActive="bg-main text-white"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            {{ category.name }}
+          </a>
+        }
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between pt-5">
+      @if (selectedCategory === 'كل المقالات') {
+        <p class="text-gray">عرض <span class="text-white">28</span> مقالات</p>
+      } @else {
+        @for (category of categories; track $index) {
+          @if (selectedCategory == category.name) {
+            <p class="text-gray">
+              عرض <span class="text-white">{{ category.count }}</span> مقالات في
+              <span class="text-second">{{ category.name }}</span>
+            </p>
+          }
+        }
+      }
+
+      <div class="pb-5">
+        <div class="p-1 bg-dark rounded-3">
+          <button
+            class="border-0 p-1"
+            (click)="selectList(1)"
+            [class]="selectedList === 1 ? 'bg-main text-white rounded-2' : 'bg-dark text-gray'"
+          >
+            <i class="fa-solid fa-table-cells-large fs-4"></i>
+          </button>
+          <button
+            class="border-0 p-1"
+            (click)="selectList(2)"
+            [class]="selectedList === 2 ? 'bg-main text-white rounded-2' : 'bg-dark text-gray'"
+          >
+            <i class="fa-solid fa-bars fs-4"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</section>
+
+

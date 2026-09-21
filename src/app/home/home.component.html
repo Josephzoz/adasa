@@ -1,0 +1,496 @@
+
+
+<section id="first-section" class="bg-black pt-5">
+  <div class="container">
+    <div class="w-50 mx-auto">
+      <div class="text-center">
+        <div
+          class="d-inline-block rounded-5 mx-auto py-2 px-3 border border-1 border-orange bg-title"
+        >
+          <span class="first-ball me-2"></span>
+          <span class="second-ball me-2"></span>
+          <span class="text-gray">مرحباً بك في عدسة</span>
+        </div>
+        <h1 class="text-white my-5">
+          اكتشف <span class="text-main">فن</span><br />
+          التصوير الفوتوغرافي
+        </h1>
+        <p class="text-gray mb-5">
+          انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.
+        </p>
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+          <button
+            class="discover-blogs text-white bg-main rounded-5 border-0 py-3 px-4 fw-bold mb-2 mb-sm-5" routerLink="/blog" routerLinkActive="active"
+          >
+            استكشف المقالات <i class="fa-solid fa-arrow-left-long"></i>
+          </button>
+          <button
+            class="know-more text-white bg-transparent rounded-5 border border-1 border-gray py-3 px-4 fw-bold mb-2 mb-sm-5" routerLink="/whoarewe" routerLinkActive="active"
+          >
+            <i class="fa-solid fa-circle-info"></i> اعرف المزيد
+          </button>
+        </div>
+
+        <div class="text-center pb-5">
+          <div class="row g-3">
+            <div class="col-6 col-lg-3">
+              <div
+                class="border border-1 border-dark rounded-5 d-flex flex-column justify-content-center align-items-center p-3 bg-third"
+              >
+                <div>
+                  <i class="fa-solid fa-newspaper text-second"></i>
+                  <p class="text-main mb-0 fs-4 fw-bold">+50</p>
+                  <p class="text-gray">مقالة</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <div
+                class="border border-1 border-dark rounded-5 d-flex flex-column justify-content-center align-items-center p-3 bg-third"
+              >
+                <div>
+                  <i class="fa-solid fa-people-group text-second"></i>
+                  <p class="text-main mb-0 fs-4 fw-bold">+10ألف</p>
+                  <p class="text-gray">قارئ</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <div
+                class="border border-1 border-dark rounded-5 d-flex flex-column justify-content-center align-items-center p-3 bg-third"
+              >
+                <div>
+                  <i class="fa-solid fa-folder-open text-second"></i>
+                  <p class="text-main mb-0 fs-4 fw-bold">4</p>
+                  <p class="text-gray">تصنيفات</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <div
+                class="border border-1 border-dark rounded-5 d-flex flex-column justify-content-center align-items-center p-3 bg-third"
+              >
+                <div>
+                  <i class="fa-solid fa-pen-nib text-second"></i>
+                  <p class="text-main mb-0 fs-4 fw-bold">6</p>
+                  <p class="text-gray">كاتب</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="py-5 bg-black">
+  <div class="container">
+    <div
+      class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end mb-5"
+    >
+      <div>
+        <div
+          class="d-inline-block rounded-5 mx-auto py-2 px-3 border border-1 border-orange bg-title"
+        >
+          <span class="first-ball me-2"></span>
+          <span class="second-ball me-2"></span>
+          <span class="text-second">مميز</span>
+        </div>
+        <h2 class="my-3 text-white">مقالات مختارة</h2>
+        <p class="mb-0 text-gray">محتوى منتقى لبدء رحلة تعلمك</p>
+      </div>
+      <div class="btn-all border-0 rounded-3 bg-main px-3 py-2 mt-3 mt-md-0">
+        <a class="text-decoration-none text-white" routerLink="/blog" routerLinkActive="active"
+          >عرض الكل <i class="fa-solid fa-angle-left"></i
+        ></a>
+      </div>
+    </div>
+
+    @for (post of posts.slice(0, 3); track post.id) {
+      <article class="mb-5 bg-third rounded-5">
+        <a class="d-block border border-1 border-dark rounded-5 text-decoration-none"routerLink="/{{post.slug}}" routerLinkActive="active">
+          <div class="row gx-4 align-items-stretch">
+            <div class="col-12 col-md-6">
+              <div class="img-box position-relative rounded-top-5 overflow-hidden h-100">
+                <img
+                  class="article-img w-100 h-100 object-fit-cover"
+                  [src]="post.image"
+                  [alt]="post.title"
+                />
+
+                <div
+                  class="badge-color position-absolute top-0 start-0 ms-4 mt-4 p-2 rounded-5 d-flex align-items-center"
+                >
+                  <span class="text-white"><i class="fa-solid fa-star me-2"></i>مميز</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="py-4 pe-5">
+                <div class="mb-5 pb-2">
+                  <div>
+                    <span
+                      class="d-inline-block me-2 text-second bg-title rounded-5 py-1 px-3 border border-1 border-orange"
+                      >{{ post.category }}</span
+                    >
+                    <span class="text-read"
+                      ><i class="fa-regular fa-clock me-2"></i>{{ post.readTime }}</span
+                    >
+                  </div>
+                  <h2 class="text-white title">{{ post.title }}</h2>
+                  <p class="text-gray">{{ post.excerpt }}</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex">
+                    <div class="position-relative me-2">
+                      <img
+                        class="author-img border border-1 border-gray"
+                        [src]="post.author.avatar"
+                        [alt]="post.author.name"
+                      />
+                      <div class="position-absolute end-0 top-50">
+                        <span class="text-second"><i class="fa-solid fa-circle"></i></span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p class="text-white fw-bold mb-0">{{ post.author.name }}</p>
+                      <p class="text-gray">{{formatDate( post.date) }}</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <span class="text-second"
+                      ><span class="d-inline-block move me-2">اقرأ المقال</span>
+                      <i class="fa-solid fa-arrow-left-long"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </article>
+    }
+  </div>
+</section>
+
+
+
+<section id="third-section" class="py-5 bg-second">
+  <div class="container text-center py-3">
+    <div
+      class="d-inline-block text-center rounded-5 mx-auto py-2 px-3 border border-1 border-orange bg-title"
+    >
+      <span class="first-ball me-2"></span>
+      <span class="second-ball me-2"></span>
+      <span class="text-second">التصنيفات</span>
+    </div>
+    <h2 class="my-3 text-white">استكشف حسب الموضوع</h2>
+    <p class="text-gray">اعثر على محتوى مصمم حسب اهتماماتك</p>
+
+    <div class="row gy-3">
+      <div class="col-6 col-md-3">
+        <a
+          class="d-block overflow-hidden rounded-4"
+          routerLink="/blog/lighting"
+          routerLinkActive="active"
+        >
+          <div
+            class="category border border-1 border-dark rounded-4 p-3 d-flex justify-content-between align-items-center"
+          >
+            <div class="d-flex flex-column align-items-start">
+              <div class="icon border border-1 p-3 border-orange rounded-4 bg-title">
+                <i class="fa-solid fa-gear fs-5 text-second"></i>
+              </div>
+
+              <h3 class="text-white">إضاءة</h3>
+              <p class="text-article">4 مقالة</p>
+            </div>
+
+            <div class="me-3 arrow rounded-circle p-2">
+              <i class="fa-solid fa-angle-left text-white"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <a
+          class="d-block overflow-hidden rounded-4"
+          routerLink="/blog/portrait"
+          routerLinkActive="active"
+        >
+          <div
+            class="category border border-1 border-dark rounded-4 p-3 d-flex justify-content-between align-items-center"
+          >
+            <div class="d-flex flex-column align-items-start">
+              <div class="icon border border-1 p-3 border-orange rounded-4 bg-title">
+                <i class="fa-solid fa-gear fs-5 text-second"></i>
+              </div>
+
+              <h3 class="text-white">بورتريه</h3>
+              <p class="text-article">6 مقالة</p>
+            </div>
+
+            <div class="me-3 arrow rounded-circle p-2">
+              <i class="fa-solid fa-angle-left text-white"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <a
+          class="d-block overflow-hidden rounded-4"
+          routerLink="/blog/nautralLandscapes"
+          routerLinkActive="active"
+        >
+          <div
+            class="category border border-1 border-dark rounded-4 p-3 d-flex justify-content-between align-items-center"
+          >
+            <div class="d-flex flex-column align-items-start">
+              <div class="icon border border-1 p-3 border-orange rounded-4 bg-title">
+                <i class="fa-solid fa-gear fs-5 text-second"></i>
+              </div>
+
+              <h3 class="text-white">مناظر طبيعية</h3>
+              <p class="text-article">4 مقالة</p>
+            </div>
+
+            <div class="me-3 arrow rounded-circle p-2">
+              <i class="fa-solid fa-angle-left text-white"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <a
+          class="d-block overflow-hidden rounded-4"
+          routerLink="/blog/technologies"
+          routerLinkActive="active"
+        >
+          <div
+            class="category border border-1 border-dark rounded-4 p-3 d-flex justify-content-between align-items-center"
+          >
+            <div class="d-flex flex-column align-items-start">
+              <div class="icon border border-1 p-3 border-orange rounded-4 bg-title">
+                <i class="fa-solid fa-gear fs-5 text-second"></i>
+              </div>
+
+              <h3 class="text-white">تقنيات</h3>
+              <p class="text-article">9 مقالة</p>
+            </div>
+
+            <div class="me-3 arrow rounded-circle p-2">
+              <i class="fa-solid fa-angle-left text-white"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <a
+          class="d-block overflow-hidden rounded-4"
+          routerLink="/blog/equipment"
+          routerLinkActive="active"
+        >
+          <div
+            class="category border border-1 border-dark rounded-4 p-3 d-flex justify-content-between align-items-center"
+          >
+            <div class="d-flex flex-column align-items-start">
+              <div class="icon border border-1 p-3 border-orange rounded-4 bg-title">
+                <i class="fa-solid fa-gear fs-5 text-second"></i>
+              </div>
+
+              <h3 class="text-white">معدات</h3>
+              <p class="text-article">5 مقالة</p>
+            </div>
+
+            <div class="me-3 arrow rounded-circle p-2">
+              <i class="fa-solid fa-angle-left text-white"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fourth-section" class="py-5 bg-black">
+  <div class="container py-2">
+    <div
+      class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end pb-5"
+    >
+      <div>
+        <div
+          class="d-inline-block text-center rounded-5 mx-auto py-2 px-3 border border-1 border-orange bg-title"
+        >
+          <span class="first-ball me-2"></span>
+          <span class="second-ball me-2"></span>
+          <span class="text-second">الأحدث</span>
+        </div>
+        <h2 class="text-white mt-3">أحدث المقالات</h2>
+        <p class="mb-0 text-gray">محتوى جديد طازج من المطبعة</p>
+      </div>
+      <div class="all-anchor me-3 mt-3 mt-md-0">
+        <a
+          class="text-decoration-none text-second fs-6 fw-bolder"
+          routerLink="/blog/allBlogs"
+          routerLinkActive="active"
+          >عرض جميع المقالات <i class="fa-solid fa-arrow-left-long"></i
+        ></a>
+      </div>
+    </div>
+
+    <div class="row gy-5">
+      @for (post of posts.slice(3, 6); track post.id) {
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="h-100">
+            <div class="border-0 rounded-5 bg-third h-100">
+              <a routerLink="/{{post.slug}}" routerLinkActive="active" class="text-decoration-none"  >
+                <div class="position-relative overflow-hidden rounded-top-5">
+                  <img
+                    class="picture w-100 rounded-top-5 object-fit-cover"
+                    [src]="post.image"
+                    [alt]="post.title"
+                  />
+                  <div
+                    class="position-absolute top-0 start-0 py-1 px-2 mt-3 ms-3 bg-black rounded-5"
+                  >
+                    <span class="text-white fw-bolder" style="font-size: 14px">{{
+                      post.category
+                    }}</span>
+                  </div>
+                </div>
+                <div class="py-3 px-4">
+                  <div class="text-read">
+                    <span class="me-4"
+                      ><i class="fa-regular fa-clock"></i> {{ post.readTime }}</span
+                    >
+                    <span>{{ formatDate(post.date) }}</span>
+                  </div>
+                  <h3 class="text-white">{{ post.title }}</h3>
+                  <p class="text-gray">{{ post.excerpt }}</p>
+                  <hr class="text-white my-3" />
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex">
+                      <img
+                        class="author-img border border-1 border-gray"
+                        [src]="post.author.avatar"
+                        [alt]="post.author.name"
+                      />
+                      <div class="ms-3">
+                        <p class="text-white mb-0">{{ post.author.name }}</p>
+                        <p class="text-gray mb-0" style="font-size: 12px">{{ post.author.role }}</p>
+                      </div>
+                    </div>
+                    <div
+                      class="left-arrow rounded-circle p-2 border border-1 border-orange bg-title"
+                    >
+                      <i class="fa-solid fa-chevron-left text-second"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </article>
+        </div>
+      }
+      <!-- <div class="col-4">
+        <div class="border border-1 rounded-5 ">
+          <article>
+            <a>
+              <div class="position-relative">
+                <img class="w-100" src="./images/logo-GdqARQRt.png" alt="">
+                <span class="position-absolute top-0 start-0">ok</span>
+              </div>
+              <div>
+                <div>
+                  <span><i class="fa-regular fa-clock"></i> hello</span>
+                  <span>date</span>
+                </div>
+                <h3>title</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <hr>
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex">
+                    <img src="" alt="">
+                    <div>
+                      <p>name</p>
+                      <p>title</p>
+                    </div>
+
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-black">
+  <div class="container py-5">
+    <div class="box w-100 text-center mx-auto border-0 rounded-5 p-5 bg-third">
+      <div class="small-box mx-auto">
+        <div class="border-0 rounded-4 d-inline-block p-3 bg-main my-3">
+          <i class="fa-regular fa-envelope text-white fs-2 fw-light"></i>
+        </div>
+        <h2 class="text-white mb-4 mt-2">
+          اشترك في <span class="linear-text">نشرتنا الإخبارية</span>
+        </h2>
+        <p class="text-gray mb-4">
+          احصل على نصائح التصوير الحصرية ودروس جديدة مباشرة في بريدك الإلكتروني
+        </p>
+        <!-- <form class="mb-4">
+        <input class="rounded-3 p-3 text-article bg-dark border-0 w-50" type="text"  placeholder="أدخل بريدك الإلكتروني" />
+        <button class="w-25 border-0 ms-3 rounded-3 bg-main text-white p-3 fw-bold">اشترك الآن</button>
+      </form> -->
+
+        <form class="mb-4 d-flex flex-column flex-md-row gap-3">
+          <input
+            class="rounded-3 p-3 text-article bg-dark border-0 w-100 "
+            type="text"
+            placeholder="أدخل بريدك الإلكتروني"
+          />
+
+          <button class="border-0 rounded-3 bg-main text-white p-3 fw-bold w-100 ">
+            اشترك الآن
+          </button>
+        </form>
+        <div class="d-flex flex-column flex-md-row justify-content-evenly align-items-center gap-3">
+          <div class="d-flex">
+            <div>
+              @for (post of posts.slice(0, 3); track post.id) {
+                <img
+                  class="formImages rounded-circle"
+                  [src]="post.author.avatar"
+                  alt="author image"
+                />
+              }
+            </div>
+            <span class="text-gray">انضم لـ <span class="text-white">+10,000</span> مصور</span>
+          </div>
+          <span>•</span>
+          <span class="text-gray">بدون إزعاج</span>
+          <span>•</span>
+          <span class="text-gray">إلغاء الاشتراك في أي وقت</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,148 @@
+/* 
+.site-footer {
+  background-color: #0f0f0f;
+}
+
+
+.footer-logo-icon {
+  background-color: #ff6b00;
+  width: 42px;
+  height: 42px;
+}
+
+.social-icon {
+  background-color: #1a1a1a;
+  width: 38px;
+  height: 38px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #ff6b00 !important;
+  color: #fff !important;
+}
+
+
+.footer-heading {
+  border-bottom: 2px solid #ff6b00 !important;
+}
+
+
+.footer-links a {
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ff6b00 !important;
+}
+
+
+.footer-input {
+  background-color: #1a1a1a;
+  border-color: #333 !important;
+}
+
+.footer-input:focus {
+  background-color: #1a1a1a;
+  border-color: #ff6b00 !important;
+  box-shadow: none;
+}
+
+.btn-subscribe {
+  background-color: #ff6b00;
+  transition: background-color 0.3s ease;
+}
+
+.btn-subscribe:hover {
+  background-color: #e05e00;
+}
+
+
+.footer-bottom-border {
+  border-top: 1px solid #222 !important;
+}
+
+.footer-bottom-links a:hover {
+  color: #ff6b00 !important;
+} */
+
+
+/* الألوان الأساسية وخلفية الفوتر */
+.site-footer {
+  background-color: #0f0f0f;
+}
+
+/* الشعار والأيقونات */
+.footer-logo-icon {
+  background-color: #ff6b00;
+  width: 42px;
+  height: 42px;
+}
+
+.social-icon {
+  background-color: #1a1a1a;
+  width: 38px;
+  height: 38px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #ff6b00 !important;
+  color: #fff !important;
+}
+
+/* عناوين الأقسام: الخط الجانبي البرتقالي */
+.footer-heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-heading::before {
+  content: "";
+  display: inline-block;
+  width: 30px;          /* طول الخط البرتقالي */
+  height: 2px;          /* سُمك الخط */
+  background: linear-gradient(to left,#835B05,#FF6A00);
+  border-radius: 2px;
+}
+
+/* روابط القوائم */
+.footer-links a {
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ff6b00 !important;
+}
+
+
+.footer-input {
+  background-color: #1a1a1a;
+  border-color: #333 !important;
+}
+
+.footer-input:focus {
+  background-color: #1a1a1a;
+  border-color: #ff6b00 !important;
+  box-shadow: none;
+}
+
+.btn-subscribe {
+  background-color: #ff6b00;
+  transition: background-color 0.3s ease;
+}
+
+.btn-subscribe:hover {
+  background-color: #e05e00;
+}
+
+
+.footer-bottom-border {
+  border-top: 1px solid #222 !important;
+}
+
+.footer-bottom-links a:hover {
+  color: #ff6b00 !important;
+}
